@@ -1,0 +1,6 @@
+export XDG_CONFIG_HOME=$HOME/.config
+
+alias VIM="nvim"
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
+export DOTFILES=$XDG_CONFIG_HOME
