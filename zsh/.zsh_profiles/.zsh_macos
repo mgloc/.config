@@ -1,0 +1,20 @@
+# brew
+export PATH=/opt/homebrew/bin:$PATH
+
+# asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+# bob
+if [ -d ~/.local/share/bob/nvim-bin ]; then
+	export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
+fi
+
+# cargo
+if [ -d "$HOME/.cargo/bin" ]; then
+    . "$HOME/.cargo/env"
+fi
+
+# vector
+if [ -d "$HOME/.vector/bin" ]; then
+    export PATH="$PATH:$HOME/.vector/bin"
+fi
