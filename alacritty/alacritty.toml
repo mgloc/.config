@@ -2,5 +2,4 @@
 program = "wsl"
 args = ["--cd", "~"]
 [font]
-normal = { family = "MesloLGM Nerd Font", style = "Regular" }
-
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
