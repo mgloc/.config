@@ -1,8 +1,12 @@
 export XDG_CONFIG_HOME=$HOME/.config
 
 alias python="python3"
+alias bat="batcat"
+alias py_activate="source .venv/bin/activate"
 alias vim="nvim"
+
 export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/usr/local/go/bin"
 
 export DOTFILES=$XDG_CONFIG_HOME
 
