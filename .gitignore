@@ -1,5 +1,6 @@
-nvm
-go
-google-chrome-for-testing 
-google-chrome
-lazygit
+*
+!alacritty
+!nvim
+!tmux
+!zsh
+!windows
