@@ -1,6 +1,10 @@
 *
-!alacritty
-!nvim
-!tmux
-!zsh
-!windows
+!*/
+!.gitignore
+# classics
+!nvim/**
+!tmux/**
+!zsh/**
+# others
+!windows/**
+!alacritty/**
