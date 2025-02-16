@@ -3,5 +3,4 @@ export DOTFILES=$XDG_CONFIG_HOME
 
 alias python="python3"
 alias act="source .venv/bin/activate"
-alias vim="nvim"
 alias lg="lazygit"

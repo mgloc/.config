@@ -7,3 +7,4 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 source $ZSH_PATH/.zsh_profile
 source $ZSH_PATH/.zsh_profiles/.zsh_macos
+source $ZSH_PATH/.zsh_profiles/.zsh_windows
