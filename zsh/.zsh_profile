@@ -1,7 +1,7 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export DOTFILES=$XDG_CONFIG_HOME
+export EDITOR="nvim"
 
 alias python="python3"
 alias act="source .venv/bin/activate"
-alias vim="nvim"
 alias lg="lazygit"

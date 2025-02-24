@@ -1,5 +1,0 @@
-[shell]
-program = "wsl"
-args = ["--cd", "~"]
-[font]
-normal = { family = "FiraCode Nerd Font", style = "Regular" }
