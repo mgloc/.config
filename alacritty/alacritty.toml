@@ -1,6 +1,15 @@
 general.import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
+  "alacritty-theme/themes/seashells.toml"
 ]
 
-[font.normal]
-family = "MesloLGLDZ Nerd Font Mono"
+[font]
+normal.family = "MesloLGSDZ Nerd Font Mono"
+size = 15
+
+[window]
+decorations = "None"
+dynamic_padding = true
+startup_mode = "Fullscreen"
+
+[mouse]
+hide_when_typing = true
