@@ -2,13 +2,11 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Open file explorer
-vim.keymap.set("n", "<leader>ss", vim.cmd.Ex, { desc = "Open Ex" })
+vim.keymap.set("n", "<leader>ss", vim.cmd.Ex, { desc = "Open Ex" }) -- replaced by Oil
 
--- Recenter on big moves and note lines for find and replace
+-- Recenter on big moves
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
 
 -- Lists
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
