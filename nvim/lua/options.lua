@@ -13,7 +13,7 @@ vim.o.scrolloff = 10
 vim.o.wrap = false
 vim.o.showmode = false
 vim.o.termguicolors = true
--- vim.o.winborder = "rounded"
+vim.o.winborder = "rounded"
 vim.o.guicursor = ""
 
 -- [[ Mouse ]]

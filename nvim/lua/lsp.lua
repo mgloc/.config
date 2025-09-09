@@ -1,33 +1,38 @@
+-- lsp.lua - Lsp Configuration
 vim.pack.add({
   { src = "https://github.com/neovim/nvim-lspconfig" },
+  { src = "https://github.com/mason-org/mason.nvim" },
 })
 
-vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format)
-vim.lsp.enable({ "lua_ls", "rust_analyzer" })
-
-vim.lsp.config("lua_ls", {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-    },
-  },
+-- Completion
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("my.lsp", {}),
+  callback = function(args)
+    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+    if client:supports_method("textDocument/completion") then
+      local chars = {}
+      for i = 32, 126 do
+        table.insert(chars, string.char(i))
+      end
+      client.server_capabilities.completionProvider.triggerCharacters = chars
+      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+    end
+  end,
 })
 
-vim.lsp.config("ruby_lsp", {
-  settings = {
-    mason = false,
-    cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") },
-    init_options = {
-      addonSettings = {
-        ["Ruby LSP Rails"] = {
-          enablePendingMigrationsPrompt = false,
-        },
-      },
-    },
-  },
+vim.cmd([[set completeopt+=menuone,noselect,popup]])
+
+-- Keymaps
+
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "gtd", vim.lsp.buf.type_definition)
+vim.keymap.set("n", "ca", vim.lsp.buf.code_action)
+
+-- Servers
+vim.lsp.enable({
+  "lua_ls",
+  "rust_analyzer",
+  "ruby_lsp",
 })
+
+require("mason").setup()

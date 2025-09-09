@@ -1,8 +1,5 @@
-return {
-  'jiaoshijie/undotree',
-  dependencies = 'nvim-lua/plenary.nvim',
-  config = true,
-  keys = {
-    { '<leader>u', "<cmd>lua require('undotree').toggle()<cr>" },
-  },
-}
+vim.pack.add({
+    { src = 'https://github.com/jiaoshijie/undotree' }
+})
+
+vim.keymap.set('', '<leader>u', "<cmd>lua require('undotree').toggle()<cr>")
