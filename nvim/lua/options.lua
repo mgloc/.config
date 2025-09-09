@@ -47,3 +47,6 @@ vim.o.backup = false
 
 -- [[ Command ]]
 vim.o.inccommand = "split"
+
+-- [[ Misc ]]
+vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
