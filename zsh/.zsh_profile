@@ -6,3 +6,4 @@ export EDITOR="nvim"
 alias python="python3"
 alias act="source .venv/bin/activate"
 alias lg="lazygit"
+cdd() { cd "$(fd --type d| fzf)" || return; }
