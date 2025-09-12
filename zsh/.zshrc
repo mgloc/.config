@@ -5,11 +5,11 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source $ZSH_PATH/.zsh_profile
+source $ZSH_PATH/zsh_profile
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    source $ZSH_PATH/.zsh_profiles/.zsh_macos
+    source $ZSH_PATH/zsh_profiles/zsh_macos
 elif [[ -n "$WSL_DISTRO_NAME" || "$(uname -r)" == *"WSL"* ]]; then
-    source $ZSH_PATH/.zsh_profiles/.zsh_wsl
+    source $ZSH_PATH/zsh_profiles/zsh_wsl
 elif [[ -f /etc/os-release && "$(grep -i 'ubuntu' /etc/os-release)" != "" ]]; then
-    source $ZSH_PATH/.zsh_profiles/.zsh_ubuntu
+    source $ZSH_PATH/zsh_profiles/zsh_ubuntu
 fi
