@@ -1,5 +1,7 @@
 vim.pack.add({
-    { src = 'https://github.com/jiaoshijie/undotree' }
+  { src = "https://github.com/jiaoshijie/undotree" },
 })
 
-vim.keymap.set('', '<leader>u', "<cmd>lua require('undotree').toggle()<cr>")
+require("undotree").setup()
+
+vim.keymap.set("n", "<leader>u", require("undotree").toggle, { noremap = true, silent = true })
