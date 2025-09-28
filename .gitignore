@@ -5,7 +5,8 @@
 !nvim/**
 !tmux/**
 !zsh/**
+!alacritty/**
 !.ripgreprc
+!starship.toml
 # others
 !windows/**
-!alacritty/**
