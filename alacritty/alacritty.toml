@@ -1,15 +1,19 @@
-general.import = [
-  "alacritty-theme/themes/seashells.toml"
-]
+general.import = [ "theme.toml" ]
 
 [font]
-normal.family = "MesloLGSDZ Nerd Font Mono"
-size = 15
+normal = { family = "CaskaydiaMono Nerd Font", style = "Regular" }
+bold = { family = "CaskaydiaMono Nerd Font", style = "Bold" }
+italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
+size = 12
 
 [window]
-decorations = "None"
 dynamic_padding = true
-startup_mode = "Fullscreen"
+padding.x = 14
+padding.y = 14
+decorations = "None"
 
 [mouse]
 hide_when_typing = true
+
+[env]
+TERM = "xterm-256color"
