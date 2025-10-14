@@ -4,7 +4,15 @@ vim.pack.add({
 })
 
 local mini = require("mini.pick")
-mini.setup()
+mini.setup({
+  mappings = {
+    choose_marked = "<C-q>",
+
+    mark = "<C-x>",
+    mark_all = "<C-w>",
+    delete_word = "",
+  },
+})
 
 vim.keymap.set("n", "<leader>sb", mini.builtin.buffers)
 vim.keymap.set("n", "<leader>sf", mini.builtin.files)
