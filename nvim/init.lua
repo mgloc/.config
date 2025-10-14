@@ -2,7 +2,7 @@ require("options")
 require("keymaps")
 
 vim.pack.add({
-    { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
 })
 
 require("lsp")
@@ -17,3 +17,5 @@ require("plugins.harpoon")
 require("plugins.lazygit")
 require("plugins.supermaven")
 require("plugins.undotree")
+
+require("plugins.fun")
