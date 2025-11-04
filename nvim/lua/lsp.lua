@@ -9,20 +9,26 @@ vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("my.lsp", {}),
   callback = function(args)
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+
+    -- LSP-only keymaps
+    local opts = { buffer = args.buf }
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "gtd", vim.lsp.buf.type_definition, opts)
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+
     if client:supports_method("textDocument/completion") then
+      -- todo convert to remove those parenthesis
       vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+      vim.keymap.set("i", "<c-space>", function()
+        vim.lsp.completion.get()
+      end)
     end
   end,
 })
 
 vim.cmd([[set completeopt+=menuone,noselect,popup]])
-
--- Keymaps
-
-vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "gtd", vim.lsp.buf.type_definition)
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-vim.keymap.set("i", "<c-space>", vim.lsp.completion.get)
 
 -- Servers
 vim.lsp.enable({
@@ -32,7 +38,3 @@ vim.lsp.enable({
 })
 
 require("mason").setup()
-
-vim.lsp.config("ruby_lsp", {
-  cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") },
-})
