@@ -20,3 +20,17 @@ fi
 if [ -d "$HOME/.vector/bin" ]; then
     export PATH="$PATH:$HOME/.vector/bin"
 fi
+
+# go
+if [ -d "$HOME/go/bin" ]; then
+    export PATH="$PATH:$HOME/go/bin"
+fi
+
+# localbin
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$PATH:$HOME/.local/bin"
+fi
+
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
