@@ -2,13 +2,11 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Open file explorer
-vim.keymap.set("n", "<leader>ss", vim.cmd.Ex, { desc = "Open Ex" })
+vim.keymap.set("n", "<leader>ss", vim.cmd.Ex)
 
--- Recenter on big moves and note lines for find and replace
+-- Recenter on big moves
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
 
 -- Lists
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
@@ -44,6 +42,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
   callback = function()
-    vim.highlight.on_yank()
+    vim.hl.on_yank()
   end,
 })

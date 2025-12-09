@@ -1,16 +1,5 @@
-return {
-  'kdheepak/lazygit.nvim',
-  cmd = {
-    'LazyGit',
-    'LazyGitConfig',
-    'LazyGitCurrentFile',
-    'LazyGitFilter',
-    'LazyGitFilterCurrentFile',
-  },
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-  },
-  keys = {
-    { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
-  },
-}
+vim.pack.add({
+  { src = "https://github.com/kdheepak/lazygit.nvim" },
+})
+
+vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>")
