@@ -1,0 +1,20 @@
+# Don't let ripgrep vomit really long lines to my terminal, and show a preview.
+--max-columns=150
+--max-columns-preview
+
+# Follow symbolic links.
+--follow
+
+# Don't respect ignore files (.gitignore, .ignore, etc.).
+--no-ignore
+
+# Search hidden files / directories (e.g. dotfiles) by default
+--hidden
+
+# Using glob patterns to include/exclude files or folders
+--glob=!.git/*
+--glob=!**/.venv/*
+--glob=!**/.DS_Store
+
+# Because who cares about case!?
+--smart-case
