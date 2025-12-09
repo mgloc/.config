@@ -6,6 +6,7 @@
     "harpoon": {
       "version": "'harpoon2'"
     },
+    "lazygit.nvim": [],
     "mason.nvim": [],
     "mini.pick": [],
     "nvim-lspconfig": [],
@@ -17,6 +18,10 @@
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "plenary.nvim": [],
-    "tokyonight.nvim": []
+    "tokyonight.nvim": [],
+    "vim-fugitive": {
+      "rev": "61b51c0",
+      "src": "https://github.com/tpope/vim-fugitive"
+    }
   }
 }
