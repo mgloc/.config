@@ -1,3 +1,6 @@
+-- Reload config
+vim.keymap.set("n", "<leader>r", ":so $MYVIMRC<CR>")
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
