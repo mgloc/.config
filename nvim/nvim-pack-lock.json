@@ -1,0 +1,22 @@
+{
+  "plugins": {
+    "conform.nvim": [],
+    "csvview.nvim": [],
+    "gitsigns.nvim": [],
+    "harpoon": {
+      "version": "'harpoon2'"
+    },
+    "mason.nvim": [],
+    "mini.pick": [],
+    "nvim-lspconfig": [],
+    "nvim-treesitter": {
+      "version": "'master'"
+    },
+    "oil.nvim": {
+      "rev": "919e155",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "plenary.nvim": [],
+    "tokyonight.nvim": []
+  }
+}
