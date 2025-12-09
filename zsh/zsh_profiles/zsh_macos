@@ -1,8 +1,10 @@
 # brew
 export PATH=/opt/homebrew/bin:$PATH
 
-# asdf
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# mise
+if command -v mise >/dev/null 2>&1; then
+    eval "$(mise activate zsh)"
+fi
 
 # bob
 if [ -d ~/.local/share/bob/nvim-bin ]; then
