@@ -27,7 +27,6 @@ require("conform").setup({
     typescript = { "prettier" },
     json = { "prettier" },
     ruby = { "rubocop" },
-    eruby = { "erb_format" },
     markdown = { "prettier" },
     sql = { "sql_formatter" },
     yml = {},

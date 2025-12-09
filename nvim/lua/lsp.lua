@@ -35,6 +35,7 @@ vim.lsp.enable({
   "lua_ls",
   "rust_analyzer",
   "ruby_lsp",
+  "herb_ls",
 })
 
 require("mason").setup()
