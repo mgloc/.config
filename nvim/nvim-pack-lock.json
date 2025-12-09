@@ -8,6 +8,10 @@
     },
     "lazygit.nvim": [],
     "mason.nvim": [],
+    "maximize.nvim": {
+      "rev": "d688b66",
+      "src": "https://github.com/declancm/maximize.nvim"
+    },
     "mini.pick": [],
     "nvim-lspconfig": [],
     "nvim-treesitter": {
