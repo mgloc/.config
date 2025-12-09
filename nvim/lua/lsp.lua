@@ -22,6 +22,7 @@ vim.cmd([[set completeopt+=menuone,noselect,popup]])
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "gtd", vim.lsp.buf.type_definition)
 vim.keymap.set("n", "ca", vim.lsp.buf.code_action)
+vim.keymap.set("i", "<c-space>", vim.lsp.completion.get)
 
 -- Servers
 vim.lsp.enable({
