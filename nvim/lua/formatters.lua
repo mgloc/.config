@@ -29,6 +29,7 @@ require("conform").setup({
     ruby = { "rubocop" },
     eruby = { "erb_format" },
     markdown = { "prettier" },
+    sql = { "sql_formatter" },
     yml = {},
     yaml = {},
   },
