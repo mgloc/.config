@@ -3,7 +3,7 @@ vim.pack.add({
 })
 
 require("nvim-treesitter.configs").setup({
-  ensure_installed = { "bash", "c", "diff", "html", "lua", "luadoc", "query", "vim", "vimdoc", "sql", "javascript", "typescript" },
+  ensure_installed = { "bash", "c", "diff", "html", "lua", "luadoc", "query", "vim", "vimdoc", "sql", "javascript", "typescript", "jinja" },
   auto_install = true,
   highlight = {
     enable = true,
