@@ -37,6 +37,7 @@ vim.lsp.enable({
   "ruby_lsp",
   "herb_ls",
   "pylsp",
+  "gopls",
 })
 
 require("mason").setup()
