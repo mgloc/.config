@@ -28,7 +28,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
-vim.cmd([[set completeopt+=menuone,noselect,popup]])
+vim.o.complete = ".,o"
+vim.o.completeopt = "fuzzy,menuone,noselect,popup"
+vim.o.autocomplete = true
+vim.o.pumheight = 9
 
 -- Servers
 vim.lsp.enable({
