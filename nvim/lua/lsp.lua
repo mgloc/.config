@@ -33,6 +33,9 @@ vim.o.completeopt = "fuzzy,menuone,noselect,popup"
 vim.o.autocomplete = true
 vim.o.pumheight = 9
 
+-- SQL quick fix https://github.com/neovim/neovim/issues/14433
+vim.g.omni_sql_default_compl_type = "syntax"
+
 -- Servers
 vim.lsp.enable({
   "lua_ls",
