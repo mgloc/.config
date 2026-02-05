@@ -5,9 +5,6 @@
 # Follow symbolic links.
 --follow
 
-# Don't respect ignore files (.gitignore, .ignore, etc.).
---no-ignore
-
 # Search hidden files / directories (e.g. dotfiles) by default
 --hidden
 
