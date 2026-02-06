@@ -3,7 +3,15 @@ vim.pack.add({
   { src = "https://github.com/stevearc/conform.nvim" },
 })
 
-require("conform").setup({
+local conform = require("conform")
+
+conform.formatters.herb = {
+  inherit = false,
+  command = "herb-format",
+  stdin = true,
+}
+
+conform.setup({
   notify_on_error = true,
   notify_no_formatters = false,
   format_on_save = function(bufnr)
@@ -27,6 +35,7 @@ require("conform").setup({
     typescript = { "prettier" },
     json = { "prettier" },
     ruby = { "rubocop" },
+    eruby = { "herb" },
     markdown = { "prettier" },
     sql = { "sql_formatter" },
     yml = {},
