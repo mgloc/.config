@@ -17,3 +17,6 @@ require("gitsigns").setup({
     changedelete = { text = "~" },
   },
 })
+
+-- Fugitive
+vim.keymap.set("n", "<leader>lb", "<cmd>Git blame<cr>")
