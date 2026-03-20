@@ -36,6 +36,7 @@ conform.setup({
     json = { "prettier" },
     ruby = { "rubocop" },
     eruby = { "herb" },
+    vue = { "prettier" },
     markdown = { "prettier" },
     sql = { "sql_formatter" },
     yml = {},
