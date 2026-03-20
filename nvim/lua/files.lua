@@ -2,7 +2,34 @@
 vim.pack.add({
   { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/stevearc/oil.nvim" },
+  { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
 })
+
+-- Harpoon
+
+local harpoon = require("harpoon")
+harpoon:setup()
+
+vim.keymap.set("n", "<leader>a", function()
+  harpoon:list():add()
+end)
+vim.keymap.set("n", "<C-e>", function()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+
+harpoon:extend({
+  UI_CREATE = function(cx)
+    vim.keymap.set("n", "<C-v>", function()
+      harpoon.ui:select_menu_item({ vsplit = true })
+    end, { buffer = cx.bufnr })
+
+    vim.keymap.set("n", "<C-s>", function()
+      harpoon.ui:select_menu_item({ split = true })
+    end, { buffer = cx.bufnr })
+  end,
+})
+
+-- Mini Pick
 
 local mini = require("mini.pick")
 mini.setup({
@@ -20,6 +47,23 @@ vim.keymap.set("n", "<leader>sf", mini.builtin.files)
 vim.keymap.set("n", "<leader>sg", mini.builtin.grep_live)
 vim.keymap.set("n", "<leader>sl", mini.builtin.grep)
 vim.keymap.set("n", "<leader>sh", mini.builtin.help)
+vim.keymap.set("n", "<leader>se", function()
+  local items = {}
+
+  for i = 1, harpoon:list():length() do
+    local item = harpoon:list():get(i)
+    if item and item.value then
+      table.insert(items, item.value)
+    end
+  end
+
+  mini.start({
+    source = {
+      items = items,
+      name = "Harpoon",
+    },
+  })
+end)
 
 -- Search in package directories (node_modules, vendor, target, pkg)
 vim.keymap.set("n", "<leader>sn", function()
@@ -68,6 +112,7 @@ vim.keymap.set("n", "<leader>sn", function()
   end)
 end)
 
+-- Oil
 require("oil").setup({
   keymaps = {
     -- Search in current Oil directory with grep_live
