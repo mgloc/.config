@@ -81,6 +81,18 @@ vim.keymap.set("n", "<leader>sn", function()
     end
   end
 
+  -- vim.pack plugin directory (works regardless of nvim install path, e.g. bob)
+  local pack_dir = vim.fn.stdpath("data") .. "/site/pack"
+  if vim.fn.isdirectory(pack_dir) == 1 then
+    table.insert(available_dirs, { path = pack_dir, label = "pack (vim.pack)" })
+  end
+
+  -- Resolve Ruby gem path dynamically (works with mise/rbenv/rvm)
+  local gem_dir = vim.fn.system("gem env gemdir 2>/dev/null"):gsub("\n", "")
+  if gem_dir ~= "" and vim.fn.isdirectory(gem_dir .. "/gems") == 1 then
+    table.insert(available_dirs, { path = gem_dir .. "/gems", label = "gems (Ruby/mise)" })
+  end
+
   if #available_dirs == 0 then
     vim.notify("No package directories found", vim.log.levels.INFO)
     return
