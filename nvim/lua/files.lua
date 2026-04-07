@@ -47,6 +47,8 @@ vim.keymap.set("n", "<leader>sf", mini.builtin.files)
 vim.keymap.set("n", "<leader>sg", mini.builtin.grep_live)
 vim.keymap.set("n", "<leader>sl", mini.builtin.grep)
 vim.keymap.set("n", "<leader>sh", mini.builtin.help)
+
+-- Search in harpoon file list
 vim.keymap.set("n", "<leader>se", function()
   local items = {}
 
@@ -140,3 +142,11 @@ require("oil").setup({
   },
 })
 vim.keymap.set("n", "-", "<cmd>Oil<CR>")
+
+-- Open config in a new tab
+vim.keymap.set("n", "<leader>ec", function()
+  local config_dir = vim.fn.stdpath("config")
+  vim.cmd("tabnew")
+  vim.cmd("tcd " .. config_dir)
+  require("oil").open()
+end, { desc = "Open nvim config in Oil (new tab)" })
