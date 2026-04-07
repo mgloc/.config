@@ -20,6 +20,7 @@ local langs = {
   "jinja",
   "ruby",
   "yaml",
+  "gdscript",
 }
 
 nvim_treesitter.install(langs)
