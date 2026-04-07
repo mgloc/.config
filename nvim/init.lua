@@ -15,7 +15,7 @@ require("plugins.csvview")
 require("plugins.git")
 require("plugins.maximize")
 require("plugins.harpoon")
-require("plugins.supermaven")
+require("plugins.actual_indians")
 require("plugins.undotree")
 
 require("plugins.fun")
