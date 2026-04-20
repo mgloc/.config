@@ -13,10 +13,27 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- LSP-only keymaps
     local opts = { buffer = args.buf }
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
     -- vim.keymap.set("n", "gtd", vim.lsp.buf.type_definition, opts)
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, opts)
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
+    vim.keymap.set("n", "<leader>ih", function()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = args.buf }), { bufnr = args.buf })
+    end, vim.tbl_extend("force", opts, { desc = "Toggle inlay hints" }))
+
+    -- clangd: switch between header and source file
+    if client.name == "clangd" then
+      vim.keymap.set("n", "<leader>ch", function()
+        vim.lsp.buf_request(0, "textDocument/switchSourceHeader", { uri = vim.uri_from_bufnr(0) }, function(_, result)
+          if result then vim.cmd("edit " .. vim.uri_to_fname(result)) end
+        end)
+      end, vim.tbl_extend("force", opts, { desc = "[C]langd switch [H]eader/source" }))
+    end
 
     if client:supports_method("textDocument/completion") then
       -- todo convert to remove those parenthesis
@@ -44,7 +61,9 @@ vim.lsp.enable({
   "herb_ls",
   "pylsp",
   "gopls",
+  "gdscript",
   "ts_ls", -- typescript-language-server
+  "clangd",
 })
 
 require("mason").setup()
