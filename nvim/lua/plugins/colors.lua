@@ -2,29 +2,20 @@ vim.pack.add({
   { src = "https://github.com/folke/tokyonight.nvim" },
 })
 
-require("tokyonight").setup({
-  transparent = true,
-  on_highlights = function(hl, _)
-    hl.TelescopeNormal = {
-      bg = "none",
-      fg = "none",
-    }
-    hl.TelescopeBorder = {
-      bg = "none",
-      fg = "none",
-    }
-    hl.TelescopePromptNormal = {
-      bg = "none",
-    }
-    hl.TelescopePromptBorder = {
-      bg = "none",
-      fg = "none",
-    }
-    hl.TelescopePromptTitle = {
-      bg = "none",
-      fg = "none",
-    }
-  end,
-})
+local function set_theme(light)
+  local is_light = light == "light"
 
-vim.cmd("colorscheme tokyonight")
+  vim.o.background = light
+
+  -- Tokyonight
+  require("tokyonight").setup({
+    transparent = not is_light, -- transparent background if dark
+  })
+  vim.cmd("colorscheme tokyonight" .. (is_light and "-day" or ""))
+end
+
+set_theme("dark")
+
+vim.keymap.set("n", "<leader>tt", function()
+  set_theme(vim.o.background == "dark" and "light" or "dark")
+end, { desc = "Toggle light/dark theme" })
