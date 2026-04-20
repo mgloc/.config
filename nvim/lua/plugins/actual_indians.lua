@@ -15,23 +15,23 @@ vim.pack.add({
 
 -- GitHub Copilot Setup
 
-vim.g.copilot_status = false
-
-vim.keymap.set("n", "<Leader>ts", function()
-  if vim.g.copilot_status then
-    vim.cmd(":Copilot disable")
-  else
-    vim.cmd(":Copilot enable")
-  end
-  vim.g.copilot_status = not vim.g.copilot_status
-  print("Copilot " .. (vim.g.copilot_status and "ON" or "OFF"))
-end)
-
-vim.g.copilot_filetypes = {
-  csv = false,
-}
-
-vim.g.copilot_node_command = "mise x node@latest -- node"
+-- vim.g.copilot_status = false
+--
+-- vim.keymap.set("n", "<Leader>ts", function()
+--   if vim.g.copilot_status then
+--     vim.cmd(":Copilot disable")
+--   else
+--     vim.cmd(":Copilot enable")
+--   end
+--   vim.g.copilot_status = not vim.g.copilot_status
+--   print("Copilot " .. (vim.g.copilot_status and "ON" or "OFF"))
+-- end)
+--
+-- vim.g.copilot_filetypes = {
+--   csv = false,
+-- }
+--
+-- vim.g.copilot_node_command = "mise x node@latest -- node"
 
 -- 99 Setup
 
