@@ -139,6 +139,15 @@ require("oil").setup({
       end,
       desc = "Grep at current Oil path",
     },
+    ["gf"] = {
+      callback = function()
+        local dir = require("oil").get_current_dir()
+        if dir then
+          vim.fn.jobstart({ "open", dir }, { detach = true })
+        end
+      end,
+      desc = "Open current Oil dir in Finder",
+    },
   },
 })
 vim.keymap.set("n", "-", "<cmd>Oil<CR>")

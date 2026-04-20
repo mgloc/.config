@@ -9,6 +9,8 @@ require("lsp")
 require("formatters")
 require("files")
 
+require("godot")
+
 require("plugins.actual_indians")
 require("plugins.colors")
 require("plugins.csvview")
