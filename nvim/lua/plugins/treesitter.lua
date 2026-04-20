@@ -7,6 +7,7 @@ local nvim_treesitter = require("nvim-treesitter")
 local langs = {
   "bash",
   "c",
+  "cpp",
   "diff",
   "html",
   "lua",
