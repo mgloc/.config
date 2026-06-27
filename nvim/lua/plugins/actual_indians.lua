@@ -1,6 +1,6 @@
 vim.pack.add({
   -- { src = "https://github.com/supermaven-inc/supermaven-nvim" },
-  { src = "https://github.com/github/copilot.vim" },
+  -- { src = "https://github.com/github/copilot.vim" },
   { src = "https://github.com/ThePrimeagen/99" },
 })
 
