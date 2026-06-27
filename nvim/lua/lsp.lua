@@ -30,7 +30,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if client.name == "clangd" then
       vim.keymap.set("n", "<leader>ch", function()
         vim.lsp.buf_request(0, "textDocument/switchSourceHeader", { uri = vim.uri_from_bufnr(0) }, function(_, result)
-          if result then vim.cmd("edit " .. vim.uri_to_fname(result)) end
+          if result then
+            vim.cmd("edit " .. vim.uri_to_fname(result))
+          else
+            vim.notify("No matching header/source found", vim.log.levels.WARN)
+          end
         end)
       end, vim.tbl_extend("force", opts, { desc = "[C]langd switch [H]eader/source" }))
     end
