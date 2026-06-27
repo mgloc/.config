@@ -59,11 +59,12 @@ vim.g.omni_sql_default_compl_type = "syntax"
 
 -- Servers
 vim.lsp.enable({
+  "bashls",
   "lua_ls",
   "rust_analyzer",
   "ruby_lsp",
   "herb_ls",
-  "pylsp",
+  "pyright",
   "gopls",
   "gdscript",
   "ts_ls", -- typescript-language-server
