@@ -67,7 +67,8 @@ vim.lsp.enable({
   "pyright",
   "gopls",
   "gdscript",
-  "ts_ls", -- typescript-language-server
+  "ts_ls",
+  "vue_ls",
   "clangd",
 })
 

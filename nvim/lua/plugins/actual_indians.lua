@@ -52,11 +52,3 @@ _99.setup({
 vim.keymap.set("v", "<leader>aiv", function()
   _99.visual({})
 end)
-
-vim.keymap.set("n", "<leader>aix", function()
-  _99.stop_all_requests()
-end)
-
-vim.keymap.set("n", "<leader>ais", function()
-  _99.search({})
-end)
