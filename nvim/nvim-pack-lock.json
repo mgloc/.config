@@ -4,6 +4,10 @@
       "rev": "0172d3caae2d8b967c9d47aa7557295f1481e5df",
       "src": "https://github.com/ThePrimeagen/99"
     },
+    "aerial.nvim": {
+      "rev": "28fe6e822ae344544c379d60fcb13c9519a1f08a",
+      "src": "https://github.com/stevearc/aerial.nvim"
+    },
     "cellular-automaton.nvim": {
       "rev": "1606e9d5d04ff254023c3f3c62842d065708d6d3",
       "src": "https://github.com/Eandrju/cellular-automaton.nvim"
