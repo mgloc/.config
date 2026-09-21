@@ -3,6 +3,7 @@ vim.pack.add({
   { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
+  { src = "https://github.com/nvim-pack/nvim-spectre" },
 })
 
 -- Harpoon
@@ -10,7 +11,7 @@ vim.pack.add({
 local harpoon = require("harpoon")
 harpoon:setup()
 
-vim.keymap.set("n", "<leader>a", function()
+vim.keymap.set("n", "<leader>h", function()
   harpoon:list():add()
 end)
 vim.keymap.set("n", "<C-e>", function()
@@ -159,3 +160,18 @@ vim.keymap.set("n", "<leader>ec", function()
   vim.cmd("tcd " .. config_dir)
   require("oil").open()
 end, { desc = "Open nvim config in Oil (new tab)" })
+
+-- Spectre
+
+vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
+  desc = "Toggle Spectre",
+})
+vim.keymap.set("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+  desc = "Search current word",
+})
+vim.keymap.set("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+  desc = "Search current word",
+})
+vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+  desc = "Search on current file",
+})
