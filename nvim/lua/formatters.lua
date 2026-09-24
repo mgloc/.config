@@ -26,7 +26,7 @@ conform.setup({
     if bufname:match("/node_modules/") then
       return
     end
-    return { timeout_ms = 500, lsp_format = "first" }
+    return { timeout_ms = 500, lsp_format = "prefer" }
   end,
   formatters_by_ft = {
     lua = { "stylua" },
@@ -46,7 +46,7 @@ conform.setup({
 
 -- Manual format
 vim.keymap.set("n", "<leader>ff", function()
-  require("conform").format({ async = false, lsp_format = "first" })
+  require("conform").format({ async = false, lsp_format = "prefer" })
 end)
 
 -- Autoformat toggle
