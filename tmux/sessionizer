@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+    dir=$1
+else
+    dir=$({ echo ~/.config; fd --type d --max-depth 1 . ~/code ~/Sources 2>/dev/null; } | sed 's:/$::' | fzf --prompt 'project> ')
+fi
+
+[[ -z $dir ]] && exit 0
+
+dir=$(cd "$dir" && pwd)
+name=$(basename "$dir" | sed 's/^\.//' | tr '.:' '__')
+
+if ! tmux has-session -t="$name" 2>/dev/null; then
+    tmux new-session -ds "$name" -c "$dir"
+    tmux send-keys -t "$name:1" "nvim" Enter
+fi
+
+if [[ -n $TMUX ]]; then
+    tmux switch-client -t "$name"
+else
+    tmux attach-session -t "$name"
+fi
