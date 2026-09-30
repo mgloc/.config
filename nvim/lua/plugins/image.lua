@@ -10,4 +10,5 @@ require("image").setup({
   max_width_window_percentage = nil,
   max_height_window_percentage = 50,
   kitty_method = "normal",
+  tmux_show_only_in_active_window = true
 })
