@@ -1,5 +1,6 @@
 # brew
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/opt/make/libexec/gnubin:$PATH
 
 # mise
 if command -v mise >/dev/null 2>&1; then
