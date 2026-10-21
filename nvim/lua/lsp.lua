@@ -70,6 +70,7 @@ vim.lsp.enable({
   "ts_ls",
   "vue_ls",
   "clangd",
+  "svelte",
 })
 
 require("mason").setup()
