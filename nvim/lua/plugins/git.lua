@@ -21,3 +21,8 @@ require("gitsigns").setup({
 
 -- Fugitive
 vim.keymap.set("n", "<leader>lb", "<cmd>Git blame<cr>")
+
+-- Diffview
+require("diffview").setup({
+  use_icons = false,
+})
